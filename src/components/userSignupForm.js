@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import adapters from '../adapters'
 
 export default class UserSignupForm extends Component {
 
     state = {
         username: '',
         password: '',
-        
+        file: ''
     }
 
     usernameInputChange = (e) => {
@@ -20,17 +21,29 @@ export default class UserSignupForm extends Component {
         })
     }
 
+    fileUpload = (e) => {
+        this.setState({
+            file: e.target.files[0]
+        })
+
+    }
+
+    submitForm = (event) => {
+        event.preventDefault()
+        adapters.createUser(this.state)
+    }
+
 
     render() {
-        console.log(this.state)
+
         return (
             <div className="form-container">
-                <form className="register-form">
+                <form onSubmit={this.submitForm} className="register-form">
                     <h1>Register</h1>
                     <p>Enter Username: <input name="username" onChange={this.usernameInputChange} value={this.state.username} /></p>
                     <p>Enter Password: <input type="password" onChange={this.passwordInputChange} value={this.state.password} /></p>
                     <p>Upload avatar below</p>
-                    <input  accept="image/*" onChange={this.uploadImg} value={this.state.image} type="file" />
+                    <input onChange={this.fileUpload}  accept="image/*"  value={this.state.image} type="file" />
                     <button type="submit">Submit</button>
                 </form>
             </div>

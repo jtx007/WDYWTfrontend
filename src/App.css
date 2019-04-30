@@ -1,6 +1,7 @@
 html {
-  /* background-image: url('https://assets.awwwards.com/awards/images/2015/04/pattern.jpg') */
-  background-image: url('https://backgroundcheckall.com/wp-content/uploads/2018/10/free-background-images-for-websites-design-8.jpg')
+  background-image: url('https://assets.awwwards.com/awards/images/2015/04/pattern.jpg');
+  /* background-image: url('https://backgroundcheckall.com/wp-content/uploads/2018/10/free-background-images-for-websites-design-8.jpg'); */
+  /* background-image: url('https://trianglify.io/p/w:1440!h:900!x:f13500.0c0c06.ea401c.000000.d8001d!v:1!c:0.25!s:0.8603991210283524') */
 }
 body {
   font-family: 'Quicksand', sans-serif;
@@ -17,14 +18,20 @@ button {
   font-weight: 500;
 }
 
+
+.splash-page {
+  background: rgba(112, 94, 94, 0.493);
+}
+
 .main-nav-bar {
+  border: 1px solid rgba(226, 30, 30, 0.267);
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 5px;
   height: 7rem;
   margin: 0px;
-  background:rgba(27, 25, 25, 0.986);
+  background:rgba(49, 45, 45, 0.986);
 }
 
 
