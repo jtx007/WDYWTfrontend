@@ -11,8 +11,11 @@ export default class Profile extends Component {
 
     render () {
         return (
-            <div>
-                <h1>User profile</h1>
+            <div className="user-profile">
+                <h1>Welcome Current User</h1>
+                <div className="user-show-list">
+                    <h3>Your Media</h3>
+                </div>
             </div>
         )
     }
