@@ -4,10 +4,10 @@ import adapters from '../adapters'
 
 export default class Profile extends Component {
 
-    componentDidMount() {
-        adapters.getFirstUser()
-        .then(data => console.log(data))
-    }
+    // componentDidMount() {
+    //     adapters.getFirstUser()
+    //     .then(data => console.log(data))
+    // }
 
     render () {
         return (

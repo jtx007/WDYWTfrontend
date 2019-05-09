@@ -31,8 +31,10 @@ export default class Login extends Component {
             <div className="form-container">
                 <form onSubmit={this.submitForm} className="login-form">
                     <h1>Login</h1>
+                    <div>
                     <p>Enter Username: <input name="username" onChange={this.usernameInputChange} value={this.state.username} /></p>
                     <p>Enter Password: <input type="password" onChange={this.passwordInputChange} value={this.state.password} /></p>
+                    </div>
                     <button type="submit">Submit</button>
                 </form>
             </div>
