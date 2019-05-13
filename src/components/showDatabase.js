@@ -14,8 +14,11 @@ export default class Show extends Component {
 
     render() {
         return (
-            <div>
-
+            <div className="show-movies-page">
+                <h1>Shows & Movies</h1>
+                <div className="shows-movies-container">
+                    
+                </div>
             </div>
         )
     }

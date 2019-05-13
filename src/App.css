@@ -18,9 +18,18 @@ button {
   font-weight: 500;
 }
 
+.home-page-header {
+  text-align: center;
+}
+
 
 .splash-page {
-  background: rgba(112, 94, 94, 0.493);
+  margin: 3rem auto;
+  background-color: rgb(223, 115, 115);
+  padding: 3rem;
+  height: 50%;
+  width: 50%;
+  border: 2px solid black;
 }
 
 .main-nav-bar {
@@ -95,4 +104,19 @@ button {
   background-color: rgb(114, 6, 6);
   height: 35rem;
   width: 50%;
+}
+
+.show-movies-page {
+  text-align: center;
+
+}
+
+.shows-movies-container {
+  display: flex;
+  height: 50%;
+  overflow: scroll;
+  margin: 0 auto;
+  width: 75%;
+  border: 1px solid black;
+  background: rgb(236, 161, 161);
 }
