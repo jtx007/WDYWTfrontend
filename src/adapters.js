@@ -11,19 +11,17 @@ function getShows() {
     return fetch("http://localhost:3000/api/v1/shows")
 }
 
-function createUser(newCredentials) {
-    const { username, password, file} = newCredentials
+function createUser(data) {
     return fetch(`http://localhost:3000/api/v1/users`, {
         "method": "POST",
-        "body": JSON.stringify({user:{username: username, password: password, avatar: file}}),
+        "body": data,
         "headers": {
-            "Content-Type": "application/json",
             "Accept": "application/json"
         }
     })
 }
 
 function getFirstUser() {
-    return fetch(`http://localhost:3000/api/v1/users/1`)
+    return fetch(`http://localhost:3000/api/v1/users/2`)
     .then(r => r.json())
 }

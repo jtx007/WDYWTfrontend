@@ -32,8 +32,11 @@ export default class UserSignupForm extends Component {
 
     submitForm = (event) => {
         event.preventDefault()
-        console.log(this.state.file)
-        adapters.createUser(this.state)
+        const formData = new FormData();
+        formData.append('user[username]', this.state.username)
+        formData.append('user[password]', this.state.password)
+        formData.append('user[avatar]', this.state.avatar)
+        adapters.createUser(formData)
     }
 
     handleFile = (e) => {
