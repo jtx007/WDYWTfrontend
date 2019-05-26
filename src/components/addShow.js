@@ -61,7 +61,6 @@ export default class AddShowForm extends Component {
 
 
     render () {
-        console.log(this.state)
         const preview = this.state.coverURL ? <img className="preview-img" alt="preview-img" src={this.state.coverURL}/> : null
         return (
             <div className="form-container">

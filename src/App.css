@@ -117,9 +117,16 @@ button {
 
 }
 
+.show-cover {
+  height: 350px;
+  width: 300px;
+}
+
 .shows-movies-container {
+  padding: 25px;
   display: flex;
-  height: 50%;
+  justify-content: space-around;
+  height: 50rem;
   overflow: scroll;
   margin: 0 auto;
   width: 75%;
