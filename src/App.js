@@ -7,6 +7,7 @@ import Home from './components/home'
 import Nav from './components/navbar'
 import Profile from './components/profile'
 import Login from './components/login'
+import AddShow from './components/addShow'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route exact path='/shows' component={Shows} />
       <Route exact path='/profile' component={Profile} />
       <Route exact path='/login' component={Login} />
+      <Route exact path='/addShow' component={AddShow} />
 
     </div>
   );

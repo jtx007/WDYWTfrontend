@@ -8,6 +8,7 @@ export default class Navbar extends Component {
                 <Link to='/login' className="nav-link" >Login </Link>
                 <Link to='/signup' className="nav-link" >Register </Link>
                 <Link to='/shows' className="nav-link" >Shows & Movies </Link>
+                <Link to='/addShow' className="nav-link">Add Show/Movie</Link>
             </nav>
         )
     }

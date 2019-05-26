@@ -8,7 +8,8 @@ export default class UserSignupForm extends Component {
     state = {
         username: '',
         password: '',
-        avatar: null
+        avatar: null,
+        avatarURL: null
     }
 
     usernameInputChange = (e) => {
@@ -23,13 +24,6 @@ export default class UserSignupForm extends Component {
         })
     }
 
-    fileUpload = (e) => {
-        this.setState({
-            file: e.target.files[0]
-        })
-
-    }
-
     submitForm = (event) => {
         event.preventDefault()
         const formData = new FormData();
@@ -40,13 +34,24 @@ export default class UserSignupForm extends Component {
     }
 
     handleFile = (e) => {
+        const file = e.target.files[0]
+        const fileReader = new FileReader()
+        fileReader.onloadend = () => {
+
         this.setState({
-            avatar: e.target.files[0]
+            avatar: file,
+            photoURL: fileReader.result
         })
+    }
+        if (file) {
+            fileReader.readAsDataURL(file)
+
+        }
     }
 
 
     render() {
+        const preview = this.state.photoURL ? <img className="preview-img" alt="preview-img" src={this.state.photoURL}/> : null
         return (
                 <div className="form-container">
                     <form onSubmit={this.submitForm} className="form">
@@ -57,6 +62,8 @@ export default class UserSignupForm extends Component {
                         <input type="file"
                         onChange={this.handleFile}
                         />
+                        
+                        {preview}
                         <button type="submit">Submit</button>
                     </form>
                 </div>

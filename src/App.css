@@ -76,6 +76,12 @@ button {
   text-align: center;
 }
 
+.preview-img {
+  height: 250px;
+  width: 250px;
+  border: black 1px solid;
+}
+
 .login-form {
   border-radius: 20px;
   border: 1px solid rgba(0, 0, 0, 0.555);
