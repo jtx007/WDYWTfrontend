@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import adapters from '../adapters';
 
 export default class Login extends Component {
 
@@ -21,8 +22,12 @@ export default class Login extends Component {
 
     submitForm = (event) => {
         event.preventDefault()
-        console.log(this.state.file)
-        // adapters.createUser(this.state)
+        const formData = new FormData()
+        formData.append('username', this.state.username)
+        formData.append('password', this.state.password)
+        adapters.loginUser(formData)
+        .then(r => r.json())
+        .then(data => localStorage.setItem('token', data.token))
     }
 
 

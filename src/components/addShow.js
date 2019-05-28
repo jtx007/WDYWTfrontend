@@ -52,10 +52,12 @@ export default class AddShowForm extends Component {
         e.preventDefault()
         const formData = new FormData()
         formData.append('show[title]', this.state.nameOfShowOrMovie)
-        formData.append('show[user_id]', 1)
+        formData.append('show[user_id]', 3)
         formData.append('show[genre_id]', this.state.selected_genre)
+        if (this.state.cover) {
         formData.append('show[cover]', this.state.cover)
         adapters.addShow(formData)
+        }
     }
 
 

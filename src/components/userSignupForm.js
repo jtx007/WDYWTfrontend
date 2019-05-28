@@ -29,8 +29,10 @@ export default class UserSignupForm extends Component {
         const formData = new FormData();
         formData.append('user[username]', this.state.username)
         formData.append('user[password]', this.state.password)
+        if (this.state.avatar) {
         formData.append('user[avatar]', this.state.avatar)
         adapters.createUser(formData)
+        }
     }
 
     handleFile = (e) => {
