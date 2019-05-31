@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
-import adapters from '../adapters';
+import { connect } from 'react-redux'
+import  loginAction  from './loginAction'
+import adapters from '../../adapters';
 
-export default class Login extends Component {
+class Login extends Component {
 
     state = {
         username: '',
         password: ''
     }
+
+
+
 
     usernameInputChange = (e) => {
         this.setState({
@@ -27,7 +32,14 @@ export default class Login extends Component {
         formData.append('password', this.state.password)
         adapters.loginUser(formData)
         .then(r => r.json())
-        .then(data => localStorage.setItem('token', data.token))
+        .then(data => {
+            console.log(data.error)
+            if (data.error) {
+                return alert(`Error: ${data.error}`)
+            }
+            localStorage.setItem('token', data.token)
+            alert("Sucess!, You've logged in!")
+        })
     }
 
 
@@ -46,3 +58,12 @@ export default class Login extends Component {
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        logged_In: state.login_user.loggedIn
+    }
+}
+
+
+export default connect(mapStateToProps, {loginAction})(Login)

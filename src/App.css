@@ -125,7 +125,7 @@ button {
 .shows-movies-container {
   padding: 25px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-around ;
   height: 50rem;
   overflow: scroll;
   margin: 0 auto;

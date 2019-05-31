@@ -6,7 +6,7 @@ import SignUp from './components/userSignupForm'
 import Home from './components/home'
 import Nav from './components/navbar'
 import Profile from './components/profile'
-import Login from './components/login'
+import Login from './components/Login/login'
 import AddShow from './components/addShow'
 
 function App() {
